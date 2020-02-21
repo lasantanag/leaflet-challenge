@@ -28,17 +28,23 @@ function addcircle (feature, latlng) {
 
     var color = "";
   
-    if (feature.properties.mag > 6){
+    if (feature.properties.mag > 5){
       color = "red";
     }
-    else if (feature.properties.mag > 3){
-      color = "blue";
+    if (feature.properties.mag > 4){
+        color = "orange";
+    }
+    if (feature.properties.mag > 3){
+        color = "light orange";
+    }
+    else if (feature.properties.mag > 2){
+      color = "yellow";
     }
     else if (feature.properties.mag > 1){
       color = "lime";
     }
     else {
-      color = "yellow";
+      color = "green";
     }
   
     return new L.circle(latlng,{
